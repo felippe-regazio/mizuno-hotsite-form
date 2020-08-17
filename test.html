@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mizuno - Fale com a Mizu</title>
+
+  <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
+  <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="vendor/milligram/dist/milligram.min.css">
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+  
+  <header>
+		<div class="container">
+			<div class="logo">
+				<a href="https://www.mizuno.com.br/" target="_blank">
+					<img src="img/logo-mizuno.webp">
+					<span class="logo-bg"></span>
+				</a>
+			</div>
+		</div>
+  </header>
+    
+  <form id="main-form" action="send.php" method="POST" enctype="multipart/form-data">
+    
+    
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div id="get-basics" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Vamos lá . Antes de começar, vou precisar que você me passe alguns dados pessoais para identificação, ok?
+Me informe o seu CPF, por favor?      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Nome completo</label>
+      <input type="text" autocomplete="off" name="name" required/>
+      
+      <label for="cpf" required>Seu CPF</label>
+      <input type="text" autocomplete="off" name="cpf" required/>
+    </div>
+
+    <div class="controls">
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-email" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Agora vou precisar do seu e-mail 😉      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="email" required>Seu E-mail</label>
+      <input type="email" name="email" required/>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-gender" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Me confirme o seu gênero      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Seu gênero</label>
+      
+      <label>
+        <input type="radio" name="gender" value="Masculino" required>
+        Masculino
+      </label>
+
+      <label>
+        <input type="radio" name="gender" value="Feminino" required>
+        Feminino
+      </label> 
+
+      <label>
+        <input type="radio" name="gender" value="Não informado" required>
+        Prefiro não informar
+      </label>           
+
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-birth" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Qual é a sua data de nascimento?      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Data de nascimento</label>
+      <input type="text" name="birth" autocomplete="off" minlength="8" required/>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-address" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Agora vou precisar do seu endereço, vou solicitar por etapas 😃 Me envia o seu CEP, por favor?      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Seu CEP</label>
+      <input type="text" name="cep" autocomplete="off" data-cep-search required/>
+
+      <label for="name" required>Sua Rua</label>
+      <input type="text" autocomplete="off" name="street" required/>
+
+      <label for="name" required>Seu Bairro</label>
+      <input type="text" autocomplete="off" name="neighborhood" required/>      
+
+      <label for="name" required>Número da sua residência</label>
+      <input type="text" autocomplete="off" name="house-number" required/>
+
+      <label for="name">Complemento</label>
+      <input type="text" autocomplete="off" name="complement"/>                  
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-region" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Qual é a tua cidade?      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Cidade</label>
+      <input type="text" name="city" autocomplete="off" required/>
+
+      <label for="name">Estado</label>
+      <select name="region">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+        <option value="EX">Estrangeiro</option>
+    </select>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-cellphone" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Você pode me informar o seu telefone celular, com DDD? (Somente números e sem espaço)      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Seu celular</label>
+      <input type="text" name="cellphone" autocomplete="off" required minlength="10"/>
+
+      <label for="name">Número de contato secundário</label>
+      <input type="text" autocomplete="off" name="extra-contact"/>      
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="which-product" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        O produto que você gostaria de fazer a reclamação é um:      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Qual o produto?</label>
+      
+      <label>
+        <input type="radio" name="which-product" value="Chinelo/Sandália" required>
+        Chinelo/Sandália
+      </label>
+
+      <label>
+        <input type="radio" name="which-product" value="Calçado Fechado" required>
+        Calçado Fechado
+      </label>
+
+      <label>
+        <input type="radio" name="which-product" value="Vestuário" required>
+        Vestuário
+      </label>     
+
+      <label>
+        <input type="radio" name="which-product" value="Acessórios" required>
+        Acessórios
+      </label>
+
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-product-type" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Você pode me dizer o tipo de produto?      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Tipo do produto</label>
+      
+      <label>
+        <input type="radio" name="product-type" value="Adulto" required>
+        Adulto
+      </label>
+
+      <label>
+        <input type="radio" name="product-type" value="Infantil" required>
+        Infantil
+      </label>
+
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-product-line" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        O produto é da linha:      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Linha do produto</label>
+      
+      <label>
+        <input type="radio" name="product-line" value="Masculino" required>
+        Masculino
+      </label>
+
+      <label>
+        <input type="radio" name="product-line" value="Feminino" required>
+        Feminino
+      </label>
+
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="what-happened" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        O que aconteceu com o produto?      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Descreva o que aconteceu com o produto</label>
+      <textarea name="what-happened" required></textarea>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="get-product-info" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Você pode me Informar a data da compra? Se você não lembrar do dia exato, pode colocar uma data aproximada 🙂 Vou precisar também do tamanho do produto      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="name" required>Data da compra</label>
+      <input type="text" autocomplete="off" name="purchase-date" minlength="8" required/>
+
+      <label for="email" required>Tamanho</label>
+      <input type="text" autocomplete="off" name="product-size" required/>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Ok</button>
+    </div>
+  </div>
+</div><div id="render-resume" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Por favor, verifique se está tudo correto com os dados da solicitação      </span>
+    </p>
+      
+    <div id="form-resume" class="choices all-done"></div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Tudo certo</button>
+    </div>
+  </div>
+</div><div id="show-terms" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Entenda como é feita a análise do produto:      </span>
+    </p>
+      
+    <div class="choices">
+      <p><strong>POLÍTICA DE TROCA</strong></p>
+
+      <p>• Você deve enviar as fotos do produto com defeito, conforme as orientações que iremos passar.</p>
+      <p>• Se não conseguirmos chegar a uma conclusão através das fotos, vamos pedir para você enviar o produto para analisarmos melhor.</p>
+      <p>• Se for aprovado, vamos recolher o seu produto para destruição e assim que ele chegar na fábrica enviaremos um novo pra você.</p>
+      <p>• Se você colocou algum pingente em uma das lojas Mizuno, vamos te enviar um modelo com pingente de fábrica.</p>
+
+      <strong>Beleza? Podemos seguir?</strong>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Prosseguir</button>
+    </div>
+  </div>
+</div><div id="show-orientation" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Me deixa te pedir um favor:      </span>
+    </p>
+      
+    <div class="choices">
+      <p>Você deverá enviar 4 fotos de um único produto (caso calçado, é necessário mostrar o par):</p>
+
+      <p>1 - Na primeira foto mostre a frente.</p>
+      <p>2 - A segunda deve mostrar o verso.</p>
+      <p>3 - Na terceira imagem, fotografe o defeito do produto.</p>
+      <p>4 - Na quarta imagem, fotografe o defeito do produto em outor ângulo</p>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Entendi</button>
+    </div>
+  </div>
+</div><!-- 1 -->
+
+<div id="upload-image-1" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Por favor, envie a primeira imagem      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="image-1">Primeira imagem (1/4)</label>
+      <input type="file" accept="image/*" name="image-1" required>
+      <div class="preview">
+        <img src="#"/>
+        <span class="preview-remove-image">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Próxima</button>
+    </div>
+  </div>
+</div>
+
+<!-- 2 -->
+
+<div id="upload-image-2" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Agora a segunda imagem      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="image-2">Segunda imagem (2/4)</label>
+      <input type="file" accept="image/*" name="image-2" required>
+      <div class="preview">
+        <img src="#"/>
+        <span class="preview-remove-image">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Próxima</button>
+    </div>
+  </div>
+</div>
+
+<!-- 3 -->
+
+<div id="upload-image-3" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Agora  a terceira imagem :)      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="image-3">Terceira imagem (3/4)</label>
+      <input type="file" accept="image/*" name="image-3" required>
+      <div class="preview">
+        <img src="#"/>
+        <span class="preview-remove-image">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Próxima</button>
+    </div>
+  </div>
+</div>
+
+<!-- 4 -->
+
+<div id="upload-image-4" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        E agora  última imagem :)      </span>
+    </p>
+      
+    <div class="choices">
+      <label for="image-4">Última imagem (3/4)</label>
+      <input type="file" accept="image/*" name="image-4" required>
+      <div class="preview">
+        <img src="#"/>
+        <span class="preview-remove-image">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+      <button data-next>Próxima</button>
+    </div>
+  </div>
+</div>
+
+<div id="get-birth" class="swiper-slide">
+  <div class="card">
+        <p class="iana-say">
+      <span class="iana-say__profile">
+        <img src="img/mizu.png" alt="Bot Profile Image">
+        <strong>Mizu </strong>
+      </span>
+      <span class="iana-say__message">
+        Prontinho, agora é só clicar em <strong>Enviar</strong> para abrir a sua solicitação      </span>
+    </p>
+      
+    <div class="choices all-done">
+      <button type="submit">ENVIAR</button>
+    </div>
+
+    <div class="controls">
+      <button data-prev class="button-clear">Voltar</button>
+    </div>
+  </div>
+</div>      </div>
+    </div>
+
+    <script src="vendor/inputmask/inputmask.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="dist/validate-form.js"></script>
+    <script src="dist/main.js"></script>
+  </form>
+</body>
+</html>
